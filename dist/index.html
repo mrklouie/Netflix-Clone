@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper@8/swiper-bundle.min.css"
+    />
+    <link rel="stylesheet" href="css/main.css" />
+  </head>
+  <body>
+    <header>
+      <nav class="navbar">
+        <div class="navbar__left">
+          <div class="navbar__brand-logo">
+            <img src="/dist/assets/Netflix Logo.png" alt="" />
+          </div>
+          <ul class="navbar__links">
+            <li><a href="#" class="home">Home</a></li>
+            <li><a href="#">TV Shows</a></li>
+            <li><a href="#">Movies</a></li>
+          </ul>
+        </div>
+        <div class="navbar__right">
+          <div class="navbar__search-bar">
+            <span class="material-icons"> search </span>
+            <input
+              type="text"
+              placeholder="Search for a movie title here"
+              id="search-bar"
+            />
+          </div>
+        </div>
+      </nav>
+    </header>
+    <!-- Slider main container -->
+    <main class="home-page">
+      <section class="hero">
+        <div class="hero__details">
+          <img
+            src="https://occ-0-395-325.1.nflxso.net/dnm/api/v6/LmEnxtiAuzezXBjYXPuDgfZ4zZQ/AAAABR4nxi3mNMEfwKbxjn0Xz_7LntyXBtqNa2vN9TpQcLUAVMV2dy-Xg21ZEHAJ-_jcYkYMvRj6oZRMXL1m7WvN7CPphXVnV5jr2s55K6WORRoUQsFWRh89B_rElnMLOz6_HPMw6KAQJcqt-f8vmjWT0naXwWx8_XMiHXzWzB5q2naMd9BCGsTqqQ.webp?r=877"
+            alt=""
+          />
+          <div class="buttons">
+            <button type="button">
+              <span class="material-icons"> play_arrow </span>Play
+            </button>
+            <button type="button">
+              <span class="material-icons"> info_outline </span>More Info
+            </button>
+          </div>
+        </div>
+      </section>
+      <section class="netflix-body">
+        <template class="carouselTemplate">
+          <div class="row">
+            <div class="row__header">
+              <div class="row__left">
+                <h2 class="row__genre-title">Popular on Netflix</h2>
+              </div>
+              <div class="row__right">
+                <div class="swiper__pagination swiper-pagination"></div>
+              </div>
+            </div>
+            <div class="swiper">
+              <div class="swiper__wrapper swiper-wrapper">
+                <template class="templateSlide">
+                  <div class="swiper__slide swiper-slide">
+                    <img
+                      class="swiper__movie-image"
+                      src="/dist/assets/Stranger Things.jpg"
+                      alt=""
+                    />
+                    <div class="swiper__details">
+                      <h2 class="swiper__movie-title">Title</h2>
+                      <div class="swiper__buttons">
+                        <div class="swiper__left">
+                          <span class="material-icons"> play_arrow </span>
+                          <span class="material-icons"> add </span>
+                          <span class="material-icons"> thumb_up </span>
+                        </div>
+                        <div class="swiper__right">
+                          <span class="material-icons"> arrow_drop_down </span>
+                        </div>
+                      </div>
+                      <div class="swiper__more-info">
+                        <span class="rating">98%</span>
+
+                        <span class="runtime">1h 32m</span>
+                      </div>
+                      <div class="swiper__genres">
+                        <span></span>
+                      </div>
+                    </div>
+                  </div>
+                </template>
+              </div>
+              <div class="swiper__button-prev swiper-button-prev button"></div>
+              <div class="swiper__button-next swiper-button-next button"></div>
+            </div>
+          </div>
+        </template>
+      </section>
+    </main>
+
+    <section class="search-movies">
+      <div class="search-movies__movie-cards-wrapper">
+        <small id="search-results"></small>
+        <div class="search-movies__movie-cards">
+          <template class="search-movies-template">
+            <div class="search-movies__movie">
+              <img
+                class="search-movies__movie-image"
+                src="/dist/assets/Stranger Things.jpg"
+                alt=""
+              />
+              <div class="search-movies__details">
+                <h2 class="search-movies__movie-title">Title</h2>
+                <div class="search-movies__buttons">
+                  <div class="search-movies__left">
+                    <span class="material-icons"> play_arrow </span>
+                    <span class="material-icons"> add </span>
+                    <span class="material-icons"> thumb_up </span>
+                  </div>
+                  <div class="search-movies__right">
+                    <span class="material-icons"> arrow_drop_down </span>
+                  </div>
+                </div>
+                <div class="search-movies__more-info">
+                  <span class="rating">98%</span>
+                  <span class="pg">18+</span>
+                  <span class="runtime">1h 32m</span>
+                </div>
+              </div>
+            </div>
+          </template>
+        </div>
+      </div>
+    </section>
+    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+    <script type="module" src="js/app.js"></script>
+  </body>
+</html>
+
+<!-- 
+<div class="search-movies__movie">
+  <img src="/dist/assets/Stranger Things.jpg" alt="" />
+</div> -->

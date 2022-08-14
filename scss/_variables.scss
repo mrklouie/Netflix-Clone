@@ -1,0 +1,49 @@
+//=======Media-Breakpoints=======//
+
+//=======Media-Breakpoints=======//
+$min: 100% / 2;
+$max: 100% / 6;
+
+$colors: (
+  black: #141414,
+  green: #5de23c,
+);
+
+$font-weights: (
+  thin: 300,
+  regular: 400,
+  medium: 700,
+  bold: 800,
+  extraBold: 900,
+);
+
+$breakpoints: (
+  minMobile: 320px,
+  maxMobile: 480px,
+  minTablets: 481px,
+  maxTablets: 768px,
+  minSmallScreens: 769px,
+  maxSmallScreens: 1024px,
+  minDesktops: 1025px,
+  maxDesktops: 1200px,
+  minExtraLarge: 1201px,
+);
+
+@function getMediaQuery($query) {
+  @return map-get($breakpoints, $query);
+}
+
+@function getFontWeight($weight) {
+  @return map-get($font-weights, $weight);
+}
+
+@function getColor($color) {
+  @return map-get($colors, $color);
+}
+
+@mixin flex($justify, $direction) {
+  display: flex;
+  justify-content: $justify;
+  align-items: center;
+  flex-direction: $direction;
+}

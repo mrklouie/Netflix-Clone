@@ -1,0 +1,78 @@
+.navbar {
+  z-index: 100;
+  padding: 2.5em var(--slider-padding);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 75px;
+
+  &__left {
+    display: flex;
+    align-items: center;
+  }
+
+  &__brand-logo {
+    & img {
+      width: 150px;
+
+      margin-right: 2em;
+    }
+  }
+
+  &__links {
+    display: flex;
+    align-items: center;
+
+    & li {
+      margin: 0 1em;
+      & a {
+        color: white;
+      }
+    }
+  }
+  &__right {
+    display: flex;
+    align-items: center;
+  }
+  &__search-bar {
+    padding: 0.5em;
+    display: flex;
+
+    align-items: center;
+    outline: 1px solid white;
+    max-width: fit-content;
+    cursor: pointer;
+    & span {
+      display: grid;
+      place-content: center;
+      color: white;
+    }
+    & input {
+      padding: 0.5em 0;
+      width: 0px;
+      transition: all 0.3s ease-in-out 0.2s;
+      background-color: transparent;
+      border-style: none;
+      outline: none;
+      color: white;
+      &::placeholder {
+        color: rgba(255, 255, 255, 0.5);
+        transition: color 0.2s ease-out;
+      }
+      &:focus::placeholder {
+        color: transparent;
+      }
+    }
+    &:hover input {
+      padding: 0.5em 1em;
+      width: 250px;
+    }
+    &:focus-within input {
+      width: 250px;
+      padding: 0.5em 1em;
+    }
+  }
+}

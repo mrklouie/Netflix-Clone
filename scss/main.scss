@@ -1,0 +1,147 @@
+@import "./fonts";
+@import "./resets";
+@import "./swiperStyle";
+@import "./variables";
+@import "./hero";
+@import "./nav";
+@import "./searchMovies";
+@import "./search";
+
+:root {
+  --slider-padding: 5rem;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-width: 100vw;
+  height: 100vh;
+  min-height: 100vh;
+  background-color: getColor(black);
+  overflow-x: hidden;
+}
+
+.netflix-body {
+  margin: -3% 0;
+  padding-bottom: 15em;
+}
+
+.home-page {
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+}
+.home-page.hide {
+  display: none;
+}
+
+.hide {
+  display: none;
+}
+
+@media (max-width: getMediaQuery(minMobile)) {
+}
+
+@media (max-width: 766px) {
+  .navbar__brand-logo img {
+    width: 100px;
+  }
+
+  .navbar__search-bar {
+    &:hover input {
+      padding: 0.5em 1em;
+      width: 150px;
+    }
+    &:focus-within input {
+      width: 150px;
+      padding: 0.5em 1em;
+    }
+  }
+  .hero {
+    &__details {
+      & > * {
+        margin: 1em 0;
+      }
+
+      & img {
+        width: 90% !important;
+      }
+
+      width: fit-content;
+
+      & .buttons {
+        display: flex;
+      }
+
+      & button {
+        transition: background-color 150ms ease-in-out;
+        margin: 0 0.5em;
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        font-weight: getFontWeight(bold);
+        font-size: 1rem;
+        padding: 0.5em 2em;
+        border-radius: 5px;
+        border-style: none;
+
+        & span {
+          font-size: 3rem;
+        }
+
+        &:nth-child(1) {
+          background-color: rgba(255, 255, 255, 1);
+          &:hover {
+            background-color: rgba(255, 255, 255, 0.5);
+          }
+        }
+        &:nth-child(2) {
+          color: white;
+          background-color: rgba(128, 128, 128, 0.5);
+          &:hover {
+            background-color: rgba(128, 128, 128, 0.4);
+          }
+          & span {
+            margin-right: 0.2em;
+          }
+        }
+      }
+    }
+  }
+}
+@media (min-width: getMediaQuery(minMobile)) and (max-width: getMediaQuery(maxMobile)) {
+  :root {
+    --slider-padding: 1rem;
+  }
+
+  .navbar__links {
+    display: none;
+  }
+
+  .hero {
+    display: none;
+  }
+
+  .netflix-body {
+    padding-top: 10em;
+  }
+
+  .swiper-button-prev,
+  .swiper-button-next,
+  .swiper-pagination-bullet {
+    display: none;
+  }
+}
+
+@media (min-width: getMediaQuery(minTablets)) and (max-width: getMediaQuery(maxTablets)) {
+  .hero {
+    background-position: 50% 50%;
+  }
+}
+@media (min-width: getMediaQuery(minSmallScreens)) and (max-width: getMediaQuery(maxSmallScreens)) {
+}
+@media (min-width: getMediaQuery(minDesktops)) and (max-width: getMediaQuery(maxDesktops)) {
+}

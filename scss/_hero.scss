@@ -1,0 +1,60 @@
+@import "./variables";
+
+.hero {
+  padding: 0 var(--slider-padding);
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  height: 90%;
+  background-image: url("/dist/assets/Featured.jpg");
+  background-size: cover;
+  background-position: 100% 100%;
+  box-shadow: 0 -5rem 5rem 1rem getColor(black) inset;
+
+  &__details {
+    & > * {
+      margin: 1em 0;
+    }
+
+    width: fit-content;
+
+    & .buttons {
+      display: flex;
+    }
+
+    & button {
+      transition: background-color 150ms ease-in-out;
+      margin: 0 0.5em;
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      font-weight: getFontWeight(bold);
+      font-size: 1rem;
+      padding: 0.5em 3em;
+      border-radius: 5px;
+      border-style: none;
+
+      & span {
+        font-size: 3rem;
+      }
+
+      &:nth-child(1) {
+        background-color: rgba(255, 255, 255, 1);
+        &:hover {
+          background-color: rgba(255, 255, 255, 0.5);
+        }
+      }
+      &:nth-child(2) {
+        color: white;
+        background-color: rgba(128, 128, 128, 0.5);
+        &:hover {
+          background-color: rgba(128, 128, 128, 0.4);
+        }
+        & span {
+          margin-right: 0.2em;
+        }
+      }
+    }
+  }
+}
